@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+      monospace;
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444444;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888888;
+}
+
+/* Smooth animations */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* GSAP animations will override these when needed */
+.gsap-element {
+  will-change: transform, opacity;
+}
+
+/* Fallback animations for when GSAP is not loaded */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Timeline specific styles */
+.timeline-line {
+  transition: height 2s ease-out;
+}
+
+/* Ensure proper spacing and layout */
+.timeline-item {
+  min-height: 200px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .timeline-item {
+    justify-content: center !important;
+  }
+
+  .timeline-item .max-w-md {
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .timeline-item .absolute.left-1\/2 {
+    display: none;
+  }
+}
+
+/* Custom color utilities */
+.bg-custom-dark {
+  background-color: #121212;
+}
+
+.text-custom-light {
+  color: #e0e0e0;
+}
+
+.text-custom-medium {
+  color: #b0b0b0;
+}
+
+.bg-custom-gray {
+  background-color: #444444;
+}
+
+.bg-custom-light-gray {
+  background-color: #888888;
+}
+
+.border-custom-gray {
+  border-color: #444444;
+}
+
+.border-custom-light-gray {
+  border-color: #888888;
+}
+
+/* 3D Model specific styles */
+.computer-glow {
+  filter: drop-shadow(0 0 20px rgba(68, 136, 255, 0.4));
+}
+
+/* Code syntax highlighting colors */
+.code-keyword {
+  color: #ff6b6b;
+}
+
+.code-string {
+  color: #ffe66d;
+}
+
+.code-property {
+  color: #4ecdc4;
+}
+
+.code-default {
+  color: #00ff88;
+}

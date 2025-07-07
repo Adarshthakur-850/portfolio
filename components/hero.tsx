@@ -101,13 +101,13 @@ export default function Hero() {
     // 2. Uncomment the code below
 
     alert(
-      "CV download feature is ready! Please add your CV PDF file to the public folder as 'adarsh-thakur-cv.pdf' to enable downloads.",
+      "CV download is ready! Pls accept the download",
     )
 
     // Uncomment this when you add the PDF file:
     
     const link = document.createElement("a")
-    link.href = "/adarsh-thakur-cv.pdf" // Adjust the path as necessary
+    link.href = "/Adarsh_CV.pdf" // Adjust the path as necessary
     link.download = "Adarsh_Thakur_CV.pdf"
     document.body.appendChild(link)
     link.click()

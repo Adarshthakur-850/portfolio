@@ -107,7 +107,7 @@ export default function Hero() {
     // Uncomment this when you add the PDF file:
     
     const link = document.createElement("a")
-    link.href = "./public/adarsh-thakur-cv.pdf" // Adjust the path as necessary
+    link.href = "./adarsh-thakur-cv.pdf" // Adjust the path as necessary
     link.download = "Adarsh_Thakur_CV.pdf"
     document.body.appendChild(link)
     link.click()
